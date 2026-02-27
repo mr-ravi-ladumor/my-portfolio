@@ -21,9 +21,9 @@ export default function Navbar() {
             className="fixed top-6 left-0 right-0 z-50 flex justify-center px-4"
         >
             <nav
-                className={`flex items-center justify-between px-6 py-3 w-full max-w-2xl rounded-full transition-all duration-300 ${scrolled
-                        ? "bg-zinc-900/80 backdrop-blur-md border border-zinc-800 shadow-xl"
-                        : "bg-transparent border border-transparent"
+                className={`flex items-center justify-between px-8 py-6 w-full max-w-2xl rounded-full transition-all duration-300 ${scrolled
+                    ? "bg-zinc-900/80 backdrop-blur-md border border-zinc-800 shadow-xl"
+                    : "bg-transparent border border-transparent"
                     }`}
             >
                 <Link
@@ -33,7 +33,7 @@ export default function Navbar() {
                     Ravi<span className="text-sky-400">.</span>
                 </Link>
 
-                <div className="hidden md:flex items-center gap-8 text-sm font-medium text-zinc-400">
+                <div className="hidden md:flex items-center gap-6 text-sm font-medium text-zinc-400">
                     {["About", "Skills", "Projects"].map((item) => (
                         <Link
                             key={item}
@@ -47,7 +47,7 @@ export default function Navbar() {
 
                 <Link
                     href="#contact"
-                    className="text-sm font-semibold text-zinc-900 bg-sky-400 hover:bg-sky-300 px-5 py-2 rounded-full transition-colors"
+                    className="text-sm font-semibold text-zinc-900 bg-sky-400 hover:bg-sky-300 px-6 py-2 rounded-full transition-colors hover:scale-105 shadow-md"
                 >
                     Contact
                 </Link>
