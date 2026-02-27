@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Github, Linkedin, Mail, Code2, ArrowDownRight } from "lucide-react";
+import { Github, Linkedin, Mail, FileText, ArrowDownRight } from "lucide-react";
 
 export default function Home() {
   return (
@@ -54,32 +54,47 @@ export default function Home() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.3 }}
-            className="flex flex-col sm:flex-row p-4 items-center gap-4 sm:gap-6"
+            className="flex flex-col sm:flex-row items-center gap-6"
           >
-            {/* Primary Action */}
-            {/* Social Icons inside pill */}
-            <div className="flex items-center gap-4 p-4 bg-zinc-800/40 border border-zinc-700/50 rounded-full">
+            {/* CV / Resume Action */}
+            <a
+              href="/resume.pdf"
+              target="_blank"
+              rel="noreferrer"
+              className="w-full sm:w-auto px-7 py-3 text-sm font-semibold rounded-full bg-zinc-100 text-zinc-900 hover:bg-white hover:scale-105 active:scale-95 transition-all flex items-center justify-center gap-2"
+            >
+              <FileText className="w-4 h-4" />
+              View Resume
+            </a>
+
+            <div className="hidden sm:block w-1.5 h-1.5 rounded-full bg-zinc-700"></div>
+
+            {/* Social Links */}
+            <div className="flex items-center justify-center gap-3">
               <a
                 href="https://github.com"
                 target="_blank"
                 rel="noreferrer"
-                className="p-2.5 rounded-full text-zinc-400 hover:text-sky-400 hover:bg-zinc-700/50 transition-colors"
+                aria-label="GitHub Profile"
+                className="flex items-center justify-center w-11 h-11 rounded-full border border-zinc-800 bg-zinc-900/50 text-zinc-400 hover:text-sky-400 hover:bg-zinc-800 hover:border-sky-400/30 transition-all hover:scale-105 active:scale-95 shadow-sm"
               >
-                <Github className="w-5 h-5" />
+                <Github className="w-[18px] h-[18px]" />
               </a>
               <a
                 href="https://linkedin.com"
                 target="_blank"
                 rel="noreferrer"
-                className="p-2.5 rounded-full text-zinc-400 hover:text-sky-400 hover:bg-zinc-700/50 transition-colors"
+                aria-label="LinkedIn Profile"
+                className="flex items-center justify-center w-11 h-11 rounded-full border border-zinc-800 bg-zinc-900/50 text-zinc-400 hover:text-sky-400 hover:bg-zinc-800 hover:border-sky-400/30 transition-all hover:scale-105 active:scale-95 shadow-sm"
               >
-                <Linkedin className="w-5 h-5" />
+                <Linkedin className="w-[18px] h-[18px]" />
               </a>
               <a
                 href="#contact"
-                className="p-2.5 rounded-full text-zinc-400 hover:text-sky-400 hover:bg-zinc-700/50 transition-colors"
+                aria-label="Email Me"
+                className="flex items-center justify-center w-11 h-11 rounded-full border border-zinc-800 bg-zinc-900/50 text-zinc-400 hover:text-sky-400 hover:bg-zinc-800 hover:border-sky-400/30 transition-all hover:scale-105 active:scale-95 shadow-sm"
               >
-                <Mail className="w-5 h-5" />
+                <Mail className="w-[18px] h-[18px]" />
               </a>
             </div>
           </motion.div>
