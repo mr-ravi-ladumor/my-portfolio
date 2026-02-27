@@ -1,10 +1,10 @@
 "use client";
 
-import React, { useState, useEffect } from "react";
-import Link from "next/link";
 import { motion } from "framer-motion";
+import Link from "next/link";
+import { useState, useEffect } from "react";
 
-const Navbar = () => {
+export default function Navbar() {
     const [scrolled, setScrolled] = useState(false);
 
     useEffect(() => {
@@ -14,40 +14,44 @@ const Navbar = () => {
     }, []);
 
     return (
-        <motion.nav
-            initial={{ y: -40, opacity: 0 }}
+        <motion.header
+            initial={{ y: -50, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
-            transition={{ duration: 0.7, delay: 0.3, ease: [0.16, 1, 0.3, 1] }}
-            className={`fixed top-6 left-1/2 -translate-x-1/2 z-50 transition-all duration-500 w-[92%] max-w-4xl rounded-2xl px-8 py-3.5 flex items-center justify-between ${scrolled ? "glass border border-white/[0.06]" : "bg-transparent"
-                }`}
+            transition={{ duration: 0.6, ease: "easeOut" }}
+            className="fixed top-6 left-0 right-0 z-50 flex justify-center px-4"
         >
-            <Link
-                href="/"
-                className="text-base font-bold tracking-[0.15em] uppercase text-white/90 hover:text-[#FF6B2C] transition-colors"
+            <nav
+                className={`flex items-center justify-between px-6 py-3 w-full max-w-2xl rounded-full transition-all duration-300 ${scrolled
+                        ? "bg-zinc-900/80 backdrop-blur-md border border-zinc-800 shadow-xl"
+                        : "bg-transparent border border-transparent"
+                    }`}
             >
-                Ravi<span className="text-[#FF6B2C]">.</span>
-            </Link>
+                <Link
+                    href="/"
+                    className="font-bold text-lg text-zinc-100 hover:text-sky-400 transition-colors"
+                >
+                    Ravi<span className="text-sky-400">.</span>
+                </Link>
 
-            <div className="hidden md:flex items-center gap-10">
-                {["About", "Skills", "Projects"].map((item) => (
-                    <Link
-                        key={item}
-                        href={`#${item.toLowerCase()}`}
-                        className="text-[11px] font-medium uppercase tracking-[0.2em] text-white/40 hover:text-white transition-colors duration-300"
-                    >
-                        {item}
-                    </Link>
-                ))}
-            </div>
+                <div className="hidden md:flex items-center gap-8 text-sm font-medium text-zinc-400">
+                    {["About", "Skills", "Projects"].map((item) => (
+                        <Link
+                            key={item}
+                            href={`#${item.toLowerCase()}`}
+                            className="hover:text-zinc-100 transition-colors"
+                        >
+                            {item}
+                        </Link>
+                    ))}
+                </div>
 
-            <Link
-                href="#contact"
-                className="px-5 py-2 bg-[#FF6B2C] rounded-lg text-[11px] uppercase tracking-[0.12em] font-bold text-black hover:bg-[#FF8A50] transition-all duration-300 hover:shadow-lg hover:shadow-[#FF6B2C]/20"
-            >
-                Let&apos;s Talk
-            </Link>
-        </motion.nav>
+                <Link
+                    href="#contact"
+                    className="text-sm font-semibold text-zinc-900 bg-sky-400 hover:bg-sky-300 px-5 py-2 rounded-full transition-colors"
+                >
+                    Contact
+                </Link>
+            </nav>
+        </motion.header>
     );
-};
-
-export default Navbar;
+}
