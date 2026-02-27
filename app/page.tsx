@@ -1,64 +1,123 @@
-import About from "@/components/About";
-import Skills from "@/components/Skills";
-import Projects from "@/components/Projects";
-import Contact from "@/components/Contact";
-import Footer from "@/components/Footer";
+"use client";
+
+import { motion } from "framer-motion";
+import { Github, Linkedin, Mail, Code2, ArrowDownRight } from "lucide-react";
 
 export default function Home() {
   return (
-    <div className="flex flex-col items-center">
-      {/* Hero Section */}
-      <section id="home" className="relative w-full h-screen flex flex-col items-center justify-center text-center px-4 overflow-hidden">
+    <main className="flex flex-col min-h-screen bg-[#09090b]">
 
-        {/* Decorative Background Element */}
-        <div className="absolute top-1/4 w-[500px] h-[500px] bg-indigo-600/10 blur-[120px] rounded-full -z-10" />
+      {/* ── HERO SECTION ── */}
+      <section className="relative w-full min-h-[90vh] flex flex-col justify-center items-center px-6 overflow-hidden">
 
-        <span className="text-indigo-400 text-xs font-bold tracking-[0.3em] uppercase mb-6 animate-pulse">
-          Available for new projects
-        </span>
+        {/* Subtle background glow effect */}
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[500px] bg-sky-500/10 blur-[120px] rounded-full pointer-events-none -z-10" />
 
-        <h1 className="text-5xl md:text-8xl font-black tracking-tighter mb-8 leading-[0.9]">
-          CRAFTING <br />
-          <span className="text-transparent bg-clip-text bg-gradient-to-b from-white to-white/40">
-            DIGITAL DEPTH
-          </span>
-        </h1>
+        <div className="max-w-3xl w-full flex flex-col items-center mt-20 text-center">
 
-        <p className="max-w-xl text-zinc-400 text-lg md:text-xl font-medium leading-relaxed mb-10">
-          I&apos;m Ravi, a Creative Developer focused on building high-performance,
-          visually stunning web applications that feel like the future.
-        </p>
+          {/* Badge: Student Info */}
+          <motion.div
+            initial={{ opacity: 0, scale: 0.9 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.5 }}
+            className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-zinc-800/40 border border-zinc-700/50 text-zinc-300 text-xs sm:text-sm mb-10"
+          >
+            <span className="w-2 h-2 rounded-full bg-sky-400 animate-pulse" />
+            Lorem ipsum dolor sit.
+          </motion.div>
 
-        <div className="flex gap-4">
-          <a href="#projects" className="px-8 py-4 bg-indigo-600 rounded-2xl font-bold hover:bg-indigo-500 transition-all hover:scale-105 active:scale-95 shadow-lg shadow-indigo-600/20">
-            View My Work
-          </a>
-          <a href="#contact" className="px-8 py-4 border border-white/10 rounded-2xl font-bold hover:bg-white/5 transition-all hover:scale-105 active:scale-95">
-            Get in Touch
-          </a>
+          {/* Headline */}
+          <motion.h1
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.1 }}
+            className="text-5xl sm:text-7xl font-bold tracking-tight text-zinc-100 mb-6"
+          >
+            Hi, I&apos;m <span className="text-sky-400">Ravi</span>.<br />
+            Lorem ipsum dolor sit amet consectetur.
+          </motion.h1>
+
+          {/* Subtext */}
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.2 }}
+            className="text-lg sm:text-xl text-zinc-400 mb-10 max-w-2xl mx-auto leading-relaxed"
+          >
+            I&apos;m a student developer passionate about full-stack engineering.
+            I love learning new technologies, crafting clean user interfaces,
+            and turning ideas into real projects.
+          </motion.p>
+
+          {/* Call to Actions & Socials */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.3 }}
+            className="flex flex-col sm:flex-row p-4 items-center gap-4 sm:gap-6"
+          >
+            {/* Primary Action */}
+            {/* Social Icons inside pill */}
+            <div className="flex items-center gap-4 p-4 bg-zinc-800/40 border border-zinc-700/50 rounded-full">
+              <a
+                href="https://github.com"
+                target="_blank"
+                rel="noreferrer"
+                className="p-2.5 rounded-full text-zinc-400 hover:text-sky-400 hover:bg-zinc-700/50 transition-colors"
+              >
+                <Github className="w-5 h-5" />
+              </a>
+              <a
+                href="https://linkedin.com"
+                target="_blank"
+                rel="noreferrer"
+                className="p-2.5 rounded-full text-zinc-400 hover:text-sky-400 hover:bg-zinc-700/50 transition-colors"
+              >
+                <Linkedin className="w-5 h-5" />
+              </a>
+              <a
+                href="#contact"
+                className="p-2.5 rounded-full text-zinc-400 hover:text-sky-400 hover:bg-zinc-700/50 transition-colors"
+              >
+                <Mail className="w-5 h-5" />
+              </a>
+            </div>
+          </motion.div>
         </div>
+
+        {/* Scroll down indicator */}
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 1, delay: 1.5 }}
+          className="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-zinc-500"
+        >
+          <span className="text-[10px] uppercase tracking-widest font-semibold">Scroll down</span>
+          <motion.div
+            animate={{ y: [0, 8, 0] }}
+            transition={{ duration: 1.5, repeat: Infinity, ease: "easeInOut" }}
+          >
+            <ArrowDownRight className="w-4 h-4 rotate-45 opacity-50" />
+          </motion.div>
+        </motion.div>
+
       </section>
 
-      {/* Section divider */}
-      <div className="section-divider w-full" />
-
-      {/* About Section */}
-      <About />
-      <div className="section-divider w-full" />
-
-      {/* Skills Section */}
-      <Skills />
-      <div className="section-divider w-full" />
-
-      {/* Projects Section */}
-      <Projects />
-      <div className="section-divider w-full" />
-
-      {/* Contact Section */}
-      <Contact />
-
-      {/* Footer */}
-      <Footer />
-    </div>
+      {/* 
+         <About />
+         <Skills />
+         <Projects />
+         <Contact />
+         <Footer />
+      */}
+      <div id="about" className="h-screen w-full" />
+    </main>
+  );
+}
+function ArrowDown(props: any) {
+  return (
+    <svg {...props} xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+      <path d="M12 5v14M19 12l-7 7-7-7" />
+    </svg>
   );
 }
