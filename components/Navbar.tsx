@@ -18,27 +18,27 @@ export default function Navbar() {
             initial={{ y: -50, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             transition={{ duration: 0.6, ease: "easeOut" }}
-            className="fixed top-6 left-0 right-0 z-50 flex justify-center px-4"
+            className="fixed top-5 left-0 right-0 z-50 flex justify-center px-6"
         >
             <nav
-                className={`flex items-center justify-between px-8 py-6 w-full max-w-2xl rounded-full transition-all duration-300 ${scrolled
-                    ? "bg-zinc-900/80 backdrop-blur-md border border-zinc-800 shadow-xl"
-                    : "bg-transparent border border-transparent"
+                className={`flex items-center justify-between w-full max-w-3xl rounded-2xl transition-all duration-500 ${scrolled
+                        ? "bg-zinc-900/75 backdrop-blur-xl border border-zinc-800/40 shadow-2xl shadow-black/20 px-7 py-3.5"
+                        : "bg-transparent border border-transparent px-6 py-4"
                     }`}
             >
                 <Link
                     href="/"
-                    className="font-bold text-lg text-zinc-100 hover:text-sky-400 transition-colors"
+                    className="font-bold text-lg text-zinc-100 hover:text-sky-400 transition-colors shrink-0"
                 >
                     Ravi<span className="text-sky-400">.</span>
                 </Link>
 
-                <div className="hidden md:flex items-center gap-6 text-sm font-medium text-zinc-400">
+                <div className="hidden md:flex items-center gap-7 text-[13px] font-medium text-zinc-500">
                     {["About", "Skills", "Projects"].map((item) => (
                         <Link
                             key={item}
                             href={`#${item.toLowerCase()}`}
-                            className="hover:text-zinc-100 transition-colors"
+                            className="hover:text-zinc-100 transition-colors duration-200"
                         >
                             {item}
                         </Link>
@@ -47,7 +47,7 @@ export default function Navbar() {
 
                 <Link
                     href="#contact"
-                    className="text-sm font-semibold text-zinc-900 bg-sky-400 hover:bg-sky-300 px-6 py-2 rounded-full transition-colors hover:scale-105 shadow-md"
+                    className="text-[13px] font-semibold text-zinc-900 bg-sky-400 hover:bg-sky-300 px-5 py-2 rounded-xl transition-all duration-200 hover:scale-[1.03] active:scale-[0.97] shadow-lg shadow-sky-400/25 shrink-0"
                 >
                     Contact
                 </Link>
