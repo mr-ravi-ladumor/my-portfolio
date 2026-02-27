@@ -33,7 +33,7 @@ export default function Home() {
             transition={{ duration: 0.5, delay: 0.1 }}
             className="text-5xl sm:text-7xl font-bold tracking-tight text-zinc-100 mb-6"
           >
-            Hi, I&apos;m <span className="text-sky-400">Ravi</span>.<br />
+            Hi, I&apos;m <span className="text-sky-400">Ravi Ladumor</span>.<br />
             Lorem ipsum dolor sit amet consectetur.
           </motion.h1>
 
