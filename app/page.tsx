@@ -4,6 +4,7 @@ import About from "@/components/About";
 import { motion } from "framer-motion";
 import { Github, Linkedin, Mail, FileText } from "lucide-react";
 import Image from "next/image";
+import { SiReact, SiNextdotjs, SiNodedotjs } from "react-icons/si";
 import Skills from "@/components/Skills";
 import Projects from "@/components/Projects";
 import Contact from "@/components/Contact";
@@ -148,25 +149,25 @@ export default function Home() {
               <motion.div
                 animate={{ y: [0, -6, 0], x: [0, 3, 0] }}
                 transition={{ duration: 3, repeat: Infinity, ease: "easeInOut", delay: 0.5 }}
-                className="absolute -top-2 -right-4 px-3.5 py-1.5 rounded-[10px] bg-zinc-800/85 border border-zinc-700/50 text-xs font-semibold text-sky-400 backdrop-blur-sm shadow-lg shadow-black/30"
+                className="absolute -top-2 -right-4 px-3.5 py-2 rounded-[10px] bg-zinc-800/85 border border-zinc-700/50 text-xs font-semibold text-sky-400 backdrop-blur-sm shadow-lg shadow-black/30 flex items-center gap-2"
               >
-                ⚛️ React.js
+                <SiReact className="text-[14px]" /> React.js
               </motion.div>
 
               <motion.div
                 animate={{ y: [0, 6, 0], x: [0, -3, 0] }}
                 transition={{ duration: 4, repeat: Infinity, ease: "easeInOut", delay: 1 }}
-                className="absolute bottom-8 -left-6 px-3.5 py-1.5 rounded-[10px] bg-zinc-800/85 border border-zinc-700/50 text-xs font-semibold text-indigo-400 backdrop-blur-sm shadow-lg shadow-black/30"
+                className="absolute bottom-8 -left-6 px-3.5 py-2 rounded-[10px] bg-zinc-800/85 border border-zinc-700/50 text-xs font-semibold text-zinc-100 backdrop-blur-sm shadow-lg shadow-black/30 flex items-center gap-2"
               >
-                🚀 Next.js
+                <SiNextdotjs className="text-[14px] text-white" /> Next.js
               </motion.div>
 
               <motion.div
                 animate={{ y: [0, -5, 0] }}
                 transition={{ duration: 3.5, repeat: Infinity, ease: "easeInOut", delay: 2 }}
-                className="absolute top-1/2 -right-8 px-3.5 py-1.5 rounded-[10px] bg-zinc-800/85 border border-zinc-700/50 text-xs font-semibold text-emerald-400 backdrop-blur-sm shadow-lg shadow-black/30"
+                className="absolute top-1/2 -right-8 px-3.5 py-2 rounded-[10px] bg-zinc-800/85 border border-zinc-700/50 text-xs font-semibold text-[#8CC84B] backdrop-blur-sm shadow-lg shadow-black/30 flex items-center gap-2"
               >
-                🟢 Node.js
+                <SiNodedotjs className="text-[14px]" /> Node.js
               </motion.div>
             </motion.div>
           </motion.div>
