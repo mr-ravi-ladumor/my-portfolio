@@ -122,8 +122,8 @@ const Contact = () => {
                             {
                                 icon: Mail,
                                 label: "Email",
-                                value: "ravi@example.com",
-                                href: "mailto:ravi@example.com",
+                                value: "raviladumor1@gmail.com",
+                                href: "mailto:raviladumor1@gmail.com",
                             },
                             {
                                 icon: MapPin,
@@ -170,9 +170,9 @@ const Contact = () => {
                             </p>
                             <div className="flex gap-3">
                                 {[
-                                    { name: "GitHub", url: "#" },
-                                    { name: "LinkedIn", url: "#" },
-                                    { name: "Twitter", url: "#" },
+                                    { name: "GitHub", url: "https://github.com/mr-ravi-ladumor" },
+                                    { name: "LinkedIn", url: "https://www.linkedin.com/in/ravi-ladumor/" },
+                                    { name: "Discord", url: "https://discord.com/users/1094303262775201883" },
                                 ].map(({ name, url }) => (
                                     <a
                                         key={name}

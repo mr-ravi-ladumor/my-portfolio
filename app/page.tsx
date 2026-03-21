@@ -4,7 +4,7 @@ import About from "@/components/About";
 import { motion } from "framer-motion";
 import { Github, Linkedin, Mail, FileText } from "lucide-react";
 import Image from "next/image";
-import { SiReact, SiNextdotjs, SiNodedotjs } from "react-icons/si";
+import { SiReact, SiNextdotjs, SiNodedotjs, SiLeetcode } from "react-icons/si";
 import Skills from "@/components/Skills";
 import Projects from "@/components/Projects";
 import Contact from "@/components/Contact";
@@ -88,7 +88,7 @@ export default function Home() {
               className="flex flex-wrap items-center gap-4"
             >
               <a
-                href="/resume.pdf"
+                href="https://drive.google.com/file/d/1PBC1JvdcY0yGTYd6P3HWHSWztu09zwFt/view"
                 target="_blank"
                 rel="noreferrer"
                 className="flex items-center gap-2 px-6 py-3 text-sm font-semibold rounded-xl bg-zinc-100 text-zinc-900 hover:bg-white hover:scale-[1.03] active:scale-[0.97] transition-all shadow-lg shadow-white/10"
@@ -101,9 +101,10 @@ export default function Home() {
 
               <div className="flex items-center gap-2.5">
                 {[
-                  { icon: Github, href: "https://github.com", label: "GitHub" },
-                  { icon: Linkedin, href: "https://linkedin.com", label: "LinkedIn" },
-                  { icon: Mail, href: "#contact", label: "Email" },
+                  { icon: Github, href: "https://github.com/mr-ravi-ladumor", label: "GitHub" },
+                  { icon: Linkedin, href: "https://www.linkedin.com/in/ravi-ladumor/", label: "LinkedIn" },
+                  { icon: SiLeetcode, href: "https://leetcode.com/u/ravi_ladumor1/", label: "LeetCode" },
+                  { icon: Mail, href: "mailto:raviladumor1@gmail.com", label: "Email" },
                 ].map(({ icon: Icon, href, label }) => (
                   <a
                     key={label}
