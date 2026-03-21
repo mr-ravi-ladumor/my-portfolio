@@ -19,7 +19,7 @@ export default function Footer() {
                     <div className="flex items-center justify-center gap-3 flex-1 order-1 md:order-2 group cursor-default">
                         <div className="relative w-11 h-11 rounded-full overflow-hidden border border-zinc-700/50 bg-zinc-900/50 group-hover:border-sky-400/40 transition-colors duration-300">
                             <Image
-                                src="/bitmoji.png"
+                                src="/your_photo.png"
                                 alt="Ravi Ladumor"
                                 fill
                                 className="object-cover p-0.5 rounded-full"

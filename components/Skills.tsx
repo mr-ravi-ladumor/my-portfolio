@@ -57,7 +57,6 @@ const Skills = () => {
             <div className="absolute bottom-0 left-0 w-64 h-64 bg-purple-600/5 blur-[120px] rounded-full" />
 
             <div className="max-w-7xl w-full">
-                {/* Section header */}
                 <div className="flex items-center gap-4 mb-4">
                     <span className="text-indigo-500 font-mono text-xs tracking-[0.3em] uppercase">
                         02 / Skills
@@ -85,11 +84,9 @@ const Skills = () => {
                             transition={{ duration: 0.5, delay: index * 0.1 }}
                             className={`group relative p-6 rounded-2xl bg-white/[0.02] border border-white/5 ${category.border} transition-all duration-500 hover:bg-white/[0.04]`}
                         >
-                            {/* Gradient glow on hover */}
                             <div className={`absolute inset-0 rounded-2xl bg-gradient-to-br ${category.color} opacity-0 group-hover:opacity-100 transition-opacity duration-500`} />
 
                             <div className="relative z-10">
-                                {/* Icon + Title row */}
                                 <div className="flex items-center gap-3 mb-5">
                                     <div className="w-10 h-10 rounded-xl bg-white/5 flex items-center justify-center group-hover:bg-white/10 transition-colors">
                                         <category.icon className="w-5 h-5 text-zinc-400 group-hover:text-white transition-colors" />
@@ -97,7 +94,6 @@ const Skills = () => {
                                     <h3 className="text-lg font-bold tracking-tight">{category.title}</h3>
                                 </div>
 
-                                {/* Skill pills */}
                                 <div className="flex flex-wrap gap-2">
                                     {category.skills.map((skill) => (
                                         <span

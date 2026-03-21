@@ -25,7 +25,6 @@ export default function Home() {
           <div className="absolute top-[55%] left-[70%] w-1 h-1 bg-sky-400/20 rounded-full animate-float-reverse" />
           <div className="absolute top-[35%] right-[25%] w-2 h-2 bg-indigo-400/15 rounded-full animate-float delay-[2s]" />
 
-          {/* Grid */}
           <div
             className="absolute inset-0 opacity-[0.025]"
             style={{
@@ -42,7 +41,6 @@ export default function Home() {
           {/* LEFT — Text */}
           <div className="flex flex-col items-start">
 
-            {/* Badge */}
             <motion.div
               initial={{ opacity: 0, x: -20 }}
               animate={{ opacity: 1, x: 0 }}
@@ -53,7 +51,6 @@ export default function Home() {
               Lorem ipsum dolor sit.
             </motion.div>
 
-            {/* Headline */}
             <motion.h1
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
@@ -71,7 +68,6 @@ export default function Home() {
               </span>
             </motion.h1>
 
-            {/* Description */}
             <motion.p
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
@@ -83,14 +79,12 @@ export default function Home() {
               and turning ideas into real projects.
             </motion.p>
 
-            {/* Actions */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.4 }}
               className="flex flex-wrap items-center gap-4"
             >
-              {/* Resume */}
               <a
                 href="/resume.pdf"
                 target="_blank"
@@ -101,10 +95,8 @@ export default function Home() {
                 View Resume
               </a>
 
-              {/* Dot */}
               <div className="w-1.5 h-1.5 rounded-full bg-zinc-700 hidden sm:block" />
 
-              {/* Socials */}
               <div className="flex items-center gap-2.5">
                 {[
                   { icon: Github, href: "https://github.com", label: "GitHub" },
@@ -133,10 +125,8 @@ export default function Home() {
             transition={{ duration: 0.8, delay: 0.3, ease: [0.16, 1, 0.3, 1] }}
             className="relative flex items-center justify-center"
           >
-            {/* Glow */}
             <div className="absolute w-[380px] h-[380px] bg-sky-500/[0.07] rounded-full blur-[80px] animate-pulse-glow" />
 
-            {/* Float container */}
             <motion.div
               animate={{ y: [0, -12, 0] }}
               transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
@@ -155,7 +145,6 @@ export default function Home() {
                 />
               </div>
 
-              {/* Tech badges */}
               <motion.div
                 animate={{ y: [0, -6, 0], x: [0, 3, 0] }}
                 transition={{ duration: 3, repeat: Infinity, ease: "easeInOut", delay: 0.5 }}

@@ -57,7 +57,6 @@ const Projects = () => {
             <div className="absolute bottom-1/4 right-0 w-80 h-80 bg-indigo-600/5 blur-[140px] rounded-full" />
 
             <div className="max-w-7xl w-full">
-                {/* Section header */}
                 <div className="flex items-center gap-4 mb-4">
                     <span className="text-indigo-500 font-mono text-xs tracking-[0.3em] uppercase">
                         03 / Projects
@@ -87,7 +86,6 @@ const Projects = () => {
                                 transition={{ duration: 0.6, delay: index * 0.15 }}
                                 className="group grid grid-cols-1 lg:grid-cols-2 gap-8 p-6 md:p-8 rounded-2xl bg-white/[0.02] border border-white/5 hover:border-indigo-500/20 transition-all duration-500"
                             >
-                                {/* Image placeholder */}
                                 <div className="aspect-video rounded-xl bg-zinc-900 border border-white/5 overflow-hidden relative">
                                     {project.image ? (
                                         // eslint-disable-next-line @next/next/no-img-element
@@ -103,11 +101,9 @@ const Projects = () => {
                                             </span>
                                         </div>
                                     )}
-                                    {/* Hover overlay */}
                                     <div className="absolute inset-0 bg-indigo-600/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                                 </div>
 
-                                {/* Details */}
                                 <div className="flex flex-col justify-between">
                                     <div>
                                         <h3 className="text-2xl font-bold tracking-tight mb-3 group-hover:text-indigo-400 transition-colors">

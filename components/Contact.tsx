@@ -26,7 +26,6 @@ const Contact = () => {
             <div className="absolute top-1/3 left-1/2 -translate-x-1/2 w-[500px] h-[500px] bg-indigo-600/5 blur-[160px] rounded-full" />
 
             <div className="max-w-7xl w-full">
-                {/* Section header */}
                 <div className="flex items-center gap-4 mb-4">
                     <span className="text-indigo-500 font-mono text-xs tracking-[0.3em] uppercase">
                         04 / Contact
