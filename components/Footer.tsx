@@ -22,7 +22,7 @@ export default function Footer() {
                                 src="/your_photo.png"
                                 alt="Ravi Ladumor"
                                 fill
-                                className="object-cover p-0.5 rounded-full"
+                                className="object-cover object-top scale-[1.7] translate-y-1.5 p-0.5 rounded-full"
                             />
                         </div>
                         <span className="text-zinc-200 group-hover:text-sky-400 font-semibold tracking-wide text-[16px] transition-colors duration-300">
