@@ -4,6 +4,10 @@ import About from "@/components/About";
 import { motion } from "framer-motion";
 import { Github, Linkedin, Mail, FileText } from "lucide-react";
 import Image from "next/image";
+import Skills from "@/components/Skills";
+import Projects from "@/components/Projects";
+import Contact from "@/components/Contact";
+import Footer from "@/components/Footer";
 
 export default function Home() {
   return (
@@ -198,6 +202,20 @@ export default function Home() {
       <div id="about" className="min-h-screen">
         <About />
       </div>
+
+      <div id="skills" className="min-h-screen">
+        <Skills />
+      </div>
+
+      <div id="projects" className="min-h-screen">
+        <Projects />
+      </div>
+
+      <div id="contact" className="min-h-screen">
+        <Contact />
+      </div>
+
+      <Footer />
     </main>
   );
 }
