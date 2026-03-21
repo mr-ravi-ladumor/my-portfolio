@@ -81,7 +81,7 @@ const About = () => {
                 
                 <Image
                    src="/your_photo.png"
-                   alt="Ravi Ladumor"
+                   alt="Portrait photo of Ravi Ladumor, Full Stack Developer"
                    fill
                    className="object-cover transition-transform duration-700 group-hover:scale-105"
                 />

@@ -20,7 +20,7 @@ export default function Footer() {
                         <div className="relative w-11 h-11 rounded-full overflow-hidden border border-zinc-700/50 bg-zinc-900/50 group-hover:border-sky-400/40 transition-colors duration-300">
                             <Image
                                 src="/your_photo.png"
-                                alt="Ravi Ladumor"
+                                alt="Small circular headshot photo of Ravi Ladumor"
                                 fill
                                 className="object-cover object-top scale-[1.7] translate-y-1.5 p-0.5 rounded-full"
                             />

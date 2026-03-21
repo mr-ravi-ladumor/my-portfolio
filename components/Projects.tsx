@@ -91,7 +91,7 @@ const Projects = () => {
                                         // eslint-disable-next-line @next/next/no-img-element
                                         <img
                                             src={project.image}
-                                            alt={project.title}
+                                            alt={`Screenshot of the ${project.title} project interface`}
                                             className="w-[95%] h-[95%] object-contain rounded-lg group-hover:scale-[1.02] transition-transform duration-700"
                                         />
                                     ) : (

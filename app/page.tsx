@@ -141,7 +141,7 @@ export default function Home() {
 
                 <Image
                   src="/bitmoji.png"
-                  alt="Ravi Ladumor — Developer"
+                  alt="3D stylized avatar of Ravi Ladumor sitting cross-legged at a desk and working on a laptop"
                   fill
                   className="object-contain rounded-full p-2"
                   priority
