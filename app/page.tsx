@@ -104,7 +104,7 @@ export default function Home() {
                   { icon: Github, href: "https://github.com/mr-ravi-ladumor", label: "GitHub" },
                   { icon: Linkedin, href: "https://www.linkedin.com/in/ravi-ladumor/", label: "LinkedIn" },
                   { icon: SiLeetcode, href: "https://leetcode.com/u/ravi_ladumor1/", label: "LeetCode" },
-                  { icon: Mail, href: "mailto:raviladumor1@gmail.com", label: "Email" },
+                  { icon: Mail, href: "mailto:ladumorravi1@gmail.com", label: "Email" },
                 ].map(({ icon: Icon, href, label }) => (
                   <a
                     key={label}

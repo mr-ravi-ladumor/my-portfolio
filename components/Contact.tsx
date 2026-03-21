@@ -2,7 +2,8 @@
 
 import React, { useState } from "react";
 import { motion } from "framer-motion";
-import { Send, Mail, MapPin, Clock } from "lucide-react";
+import { Send, Mail, MapPin, Clock, CheckCircle, AlertCircle } from "lucide-react";
+import emailjs from "@emailjs/browser";
 
 const Contact = () => {
     const [formData, setFormData] = useState({
@@ -11,19 +12,46 @@ const Contact = () => {
         message: "",
     });
     const [submitted, setSubmitted] = useState(false);
+    const [isSubmitting, setIsSubmitting] = useState(false);
+    const [error, setError] = useState(false);
 
-    const handleSubmit = (e: React.FormEvent) => {
+    const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
-        // TODO: Hook up to your backend / email service
-        console.log("Form submitted:", formData);
-        setSubmitted(true);
-        setTimeout(() => setSubmitted(false), 4000);
-        setFormData({ name: "", email: "", message: "" });
+        
+        if (!formData.name || !formData.email || !formData.message) {
+            return;
+        }
+
+        setIsSubmitting(true);
+        setError(false);
+
+        try {
+            await emailjs.send(
+                process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID!,
+                process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID!,
+                {
+                    name: formData.name,
+                    email: formData.email,
+                    message: formData.message,
+                },
+                process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY!
+            );
+            
+            setSubmitted(true);
+            setFormData({ name: "", email: "", message: "" });
+            setTimeout(() => setSubmitted(false), 5000);
+        } catch (err) {
+            console.error("Failed to send email:", err);
+            setError(true);
+            setTimeout(() => setError(false), 5000);
+        } finally {
+            setIsSubmitting(false);
+        }
     };
 
     return (
         <section id="contact" className="w-full py-32 px-6 flex justify-center relative overflow-hidden">
-            <div className="absolute top-1/3 left-1/2 -translate-x-1/2 w-[500px] h-[500px] bg-indigo-600/5 blur-[160px] rounded-full" />
+            <div className="absolute top-1/3 left-1/2 -translate-x-1/2 w-[500px] h-[500px] bg-indigo-600/5 blur-[160px] rounded-full pointer-events-none" />
 
             <div className="max-w-7xl w-full">
                 <div className="flex items-center gap-4 mb-4">
@@ -103,10 +131,33 @@ const Contact = () => {
 
                         <button
                             type="submit"
-                            className="group flex items-center gap-3 px-8 py-4 bg-indigo-600 rounded-xl font-bold text-sm tracking-wide hover:bg-indigo-500 transition-all hover:shadow-lg hover:shadow-indigo-600/20 active:scale-[0.98]"
+                            disabled={isSubmitting}
+                            className={`group flex items-center justify-center gap-3 px-8 py-4 rounded-xl font-bold text-sm tracking-wide transition-all duration-300 ${
+                                isSubmitting
+                                    ? "bg-indigo-600 opacity-70 cursor-not-allowed"
+                                : submitted
+                                    ? "bg-emerald-500 text-white shadow-lg shadow-emerald-500/20"
+                                : error
+                                    ? "bg-red-500 text-white shadow-lg shadow-red-500/20"
+                                : "bg-indigo-600 hover:bg-indigo-500 hover:shadow-lg hover:shadow-indigo-600/20 active:scale-[0.98]"
+                            }`}
                         >
-                            <Send className="w-4 h-4 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
-                            {submitted ? "Message Sent!" : "Send Message"}
+                            {submitted ? (
+                                <>
+                                    <CheckCircle className="w-4 h-4" />
+                                    Message Sent!
+                                </>
+                            ) : error ? (
+                                <>
+                                    <AlertCircle className="w-4 h-4" />
+                                    Failed to send
+                                </>
+                            ) : (
+                                <>
+                                    <Send className={`w-4 h-4 ${isSubmitting ? 'animate-pulse' : 'group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform'}`} />
+                                    {isSubmitting ? "Sending..." : "Send Message"}
+                                </>
+                            )}
                         </button>
                     </motion.form>
 
@@ -122,13 +173,13 @@ const Contact = () => {
                             {
                                 icon: Mail,
                                 label: "Email",
-                                value: "raviladumor1@gmail.com",
-                                href: "mailto:raviladumor1@gmail.com",
+                                value: "ladumorravi1@gmail.com",
+                                href: "mailto:ladumorravi1@gmail.com",
                             },
                             {
                                 icon: MapPin,
                                 label: "Location",
-                                value: "India",
+                                value: "Surat, Gujarat, India",
                                 href: null,
                             },
                             {
