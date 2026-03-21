@@ -12,12 +12,10 @@ export default function Footer() {
             <div className="max-w-[1200px] mx-auto px-8 sm:px-16">
                 <div className="w-full flex flex-col md:flex-row items-center justify-between gap-8 md:gap-4">
                     
-                    {/* Left: Minimal Copyright */}
                     <div className="text-zinc-500 text-[14px] font-medium tracking-wide flex-1 text-center md:text-left order-3 md:order-1">
                         © {currentYear} Crafted with passion.
                     </div>
 
-                    {/* Center: Avatar + Name */}
                     <div className="flex items-center justify-center gap-3 flex-1 order-1 md:order-2 group cursor-default">
                         <div className="relative w-11 h-11 rounded-full overflow-hidden border border-zinc-700/50 bg-zinc-900/50 group-hover:border-sky-400/40 transition-colors duration-300">
                             <Image
@@ -32,7 +30,6 @@ export default function Footer() {
                         </span>
                     </div>
 
-                    {/* Right: Clean Back to top */}
                     <div className="flex justify-center md:justify-end flex-1 order-2 md:order-3">
                         <button
                             onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
@@ -48,7 +45,6 @@ export default function Footer() {
                 </div>
             </div>
             
-            {/* Subtle base glow */}
             <div className="absolute bottom-[-50px] left-1/2 -translate-x-1/2 w-full max-w-[800px] h-[100px] bg-sky-500/[0.03] rounded-[100%] blur-3xl pointer-events-none" />
         </footer>
     );
