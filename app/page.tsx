@@ -37,7 +37,7 @@ export default function Home() {
         </div>
 
         {/* Content */}
-        <div className="relative z-[1] max-w-[1200px] mx-auto w-full px-16 pt-[140px] pb-20 grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
+        <div className="relative z-[1] max-w-7xl mx-auto w-full px-6 pt-[140px] pb-20 grid grid-cols-1 lg:grid-cols-[1.3fr_1fr] gap-10 lg:gap-16 items-center">
 
           {/* LEFT — Text */}
           <div className="flex flex-col items-start">
@@ -48,8 +48,8 @@ export default function Home() {
               transition={{ duration: 0.5 }}
               className="inline-flex items-center gap-2.5 px-4 py-2 rounded-full bg-zinc-800/50 border border-zinc-700/40 text-zinc-300 text-[13px] mb-8"
             >
-              <span className="w-2 h-2 rounded-full bg-sky-400 animate-pulse" />
-              Lorem ipsum dolor sit.
+              <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse shadow-[0_0_8px_rgba(52,211,153,0.8)]" />
+              Available for new opportunities
             </motion.div>
 
             <motion.h1
@@ -59,25 +59,26 @@ export default function Home() {
               className="text-[clamp(2.5rem,5vw,4.5rem)] font-extrabold tracking-tight leading-[1.1] text-zinc-100 mb-6"
             >
               Hi, I&apos;m{" "}
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-sky-400 to-indigo-400">
-                Ravi Ladumor
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-sky-400 to-indigo-400 whitespace-nowrap">
+                Full Stack Developer
               </span>
               .
               <br />
-              <span className="text-zinc-400 text-[clamp(2.5rem,3vw,3.5rem)]">
-                Lorem ipsum dolor sit amet consectetur.
-              </span>
             </motion.h1>
 
             <motion.p
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.25 }}
-              className="text-[17px] text-zinc-500 leading-relaxed max-w-[480px] mb-10"
+              className="text-[17px] text-zinc-300 leading-relaxed max-w-[480px] mb-10 flex flex-col gap-3"
             >
-              I&apos;m a student developer passionate about full-stack engineering.
-              I love learning new technologies, crafting clean user interfaces,
-              and turning ideas into real projects.
+              <span>
+                Meet Ravi Ladumor, a full-stack developer who enjoys building clean and well-structured applications. He likes understanding how things work behind the scenes and focuses on creating practical, reliable solutions while continuously learning
+                <span className="text-[14px] pl-2 font-mono text-zinc-500/90">
+                 ~ ChatGPT
+              </span>
+              </span>
+              
             </motion.p>
 
             <motion.div
