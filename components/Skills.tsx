@@ -3,6 +3,25 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { Code2, Palette, Server, GitBranch } from "lucide-react";
+import {
+    SiCplusplus,
+    SiJavascript,
+    SiTypescript,
+    SiPython,
+    SiReact,
+    SiNextdotjs,
+    SiTailwindcss,
+    SiHtml5,
+    SiNodedotjs,
+    SiExpress,
+    SiMongodb,
+    SiMysql,
+    SiGit,
+    SiGithub,
+    SiPostman,
+    SiVercel,
+    SiRender
+} from "react-icons/si";
 
 const skillCategories = [
     {
@@ -10,28 +29,49 @@ const skillCategories = [
         icon: Code2,
         color: "from-indigo-500/20 to-indigo-600/5",
         border: "group-hover:border-indigo-500/40",
-        skills: ["C++", "JavaScript", "TypeScript", "Python", "SQL", "HTML/CSS"],
+        skills: [
+            { name: "C++", icon: SiCplusplus, color: "text-blue-500 group-hover:text-blue-400" },
+            { name: "JavaScript", icon: SiJavascript, color: "text-yellow-400 group-hover:text-yellow-300" },
+            { name: "TypeScript", icon: SiTypescript, color: "text-blue-600 group-hover:text-blue-400" },
+            { name: "Python", icon: SiPython, color: "text-yellow-500 group-hover:text-yellow-400" },
+        ],
     },
     {
-        title: "Frontend Stack",
+        title: "Frontend",
         icon: Palette,
         color: "from-sky-500/20 to-sky-600/5",
         border: "group-hover:border-sky-500/40",
-        skills: ["React.js", "Next.js", "Tailwind CSS"],
+        skills: [
+            { name: "React.js", icon: SiReact, color: "text-sky-400 group-hover:text-sky-300" },
+            { name: "Next.js", icon: SiNextdotjs, color: "text-zinc-100 group-hover:text-white" },
+            { name: "Tailwind", icon: SiTailwindcss, color: "text-teal-400 group-hover:text-teal-300" },
+            { name: "HTML/CSS", icon: SiHtml5, color: "text-orange-500 group-hover:text-orange-400" },
+        ],
     },
     {
         title: "Backend & DB",
         icon: Server,
         color: "from-emerald-500/20 to-emerald-600/5",
         border: "group-hover:border-emerald-500/40",
-        skills: ["Node.js", "Express.js", "MongoDB", "MySQL"],
+        skills: [
+            { name: "Node.js", icon: SiNodedotjs, color: "text-emerald-500 group-hover:text-emerald-400" },
+            { name: "Express.js", icon: SiExpress, color: "text-zinc-400 group-hover:text-zinc-200" },
+            { name: "MongoDB", icon: SiMongodb, color: "text-green-500 group-hover:text-green-400" },
+            { name: "MySQL", icon: SiMysql, color: "text-blue-400 group-hover:text-blue-300" },
+        ],
     },
     {
-        title: "Dev Tools",
+        title: "Tools & Cloud",
         icon: GitBranch,
         color: "from-amber-500/20 to-amber-600/5",
         border: "group-hover:border-amber-500/40",
-        skills: ["Git", "GitHub", "Postman", "Vercel", "Render"],
+        skills: [
+            { name: "Git", icon: SiGit, color: "text-orange-600 group-hover:text-orange-500" },
+            { name: "GitHub", icon: SiGithub, color: "text-zinc-300 group-hover:text-white" },
+            { name: "Postman", icon: SiPostman, color: "text-orange-500 group-hover:text-orange-400" },
+            { name: "Vercel", icon: SiVercel, color: "text-zinc-100 group-hover:text-white" },
+            { name: "Render", icon: SiRender, color: "text-zinc-100 group-hover:text-white" },
+        ],
     },
 ];
 
@@ -58,7 +98,7 @@ export default function Skills() {
                     </p>
                 </div>
 
-                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
                     {skillCategories.map((category, index) => (
                         <motion.div
                             key={category.title}
@@ -66,26 +106,29 @@ export default function Skills() {
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true, margin: "-50px" }}
                             transition={{ duration: 0.5, delay: index * 0.1 }}
-                            className={`group relative p-6 rounded-2xl bg-zinc-900/40 border border-zinc-800 hover:bg-zinc-900/80 ${category.border} transition-all duration-500`}
+                            className={`group relative p-8 rounded-3xl bg-zinc-900/40 border border-zinc-800 hover:bg-zinc-900/80 ${category.border} transition-all duration-500 shadow-lg`}
                         >
-                            <div className={`absolute inset-0 rounded-2xl bg-gradient-to-br ${category.color} opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none`} />
+                            <div className={`absolute inset-0 rounded-3xl bg-gradient-to-br ${category.color} opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none`} />
 
-                            <div className="relative z-10">
-                                <div className="flex items-center gap-3 mb-5">
+                            <div className="relative z-10 flex flex-col h-full">
+                                <div className="flex items-center gap-3 mb-8 border-b border-zinc-800/80 pb-4">
                                     <div className="w-10 h-10 rounded-xl bg-zinc-800/50 border border-zinc-700/50 flex items-center justify-center group-hover:bg-zinc-800 transition-colors">
                                         <category.icon className="w-5 h-5 text-zinc-400 group-hover:text-zinc-100 transition-colors" />
                                     </div>
-                                    <h3 className="text-[17px] font-bold tracking-tight text-zinc-100">{category.title}</h3>
+                                    <h3 className="text-[18px] font-bold tracking-tight text-zinc-100">{category.title}</h3>
                                 </div>
 
-                                <div className="flex flex-wrap gap-2">
+                                <div className="flex flex-col gap-3">
                                     {category.skills.map((skill) => (
-                                        <span
-                                            key={skill}
-                                            className="px-3 py-1.5 text-[13px] font-medium text-zinc-400 bg-zinc-900/50 rounded-lg border border-zinc-800 group-hover:text-sky-400 group-hover:border-sky-500/20 transition-all duration-300"
+                                        <div
+                                            key={skill.name}
+                                            className="flex items-center gap-3 px-4 py-2.5 rounded-xl bg-zinc-900/50 border border-zinc-800 group-hover:bg-zinc-900 group-hover:border-zinc-700/50 transition-all duration-300 transform group-hover:-translate-y-0.5"
                                         >
-                                            {skill}
-                                        </span>
+                                            <skill.icon className={`w-5 h-5 opacity-70 group-hover:opacity-100 transition-opacity ${skill.color}`} />
+                                            <span className="text-[14px] font-medium text-zinc-400 group-hover:text-zinc-200 transition-colors">
+                                                {skill.name}
+                                            </span>
+                                        </div>
                                     ))}
                                 </div>
                             </div>
