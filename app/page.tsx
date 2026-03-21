@@ -1,12 +1,13 @@
 "use client";
 
+import About from "@/components/About";
 import { motion } from "framer-motion";
 import { Github, Linkedin, Mail, FileText } from "lucide-react";
 import Image from "next/image";
 
 export default function Home() {
   return (
-    <main className="flex flex-col min-h-screen bg-[#09090b]">
+    <main id='home' className="flex flex-col min-h-screen bg-[#09090b]">
 
       {/* HERO SECTION */}
       <section className="relative w-full min-h-screen flex items-center overflow-hidden">
@@ -194,7 +195,9 @@ export default function Home() {
         </motion.div>
       </section>
 
-      <div id="about" className="min-h-screen" />
+      <div id="about" className="min-h-screen">
+        <About />
+      </div>
     </main>
   );
 }

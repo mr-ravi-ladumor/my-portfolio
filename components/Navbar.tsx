@@ -27,7 +27,7 @@ export default function Navbar() {
                     }`}
             >
                 <Link
-                    href="/"
+                    href="#home"
                     className="font-bold text-lg text-zinc-100 hover:text-sky-400 transition-colors shrink-0"
                 >
                     Ravi<span className="text-sky-400">.</span>
